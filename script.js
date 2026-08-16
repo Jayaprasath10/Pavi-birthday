@@ -114,13 +114,7 @@ $("skipBalloons").addEventListener("click",()=>{
 });
 
 $("nextToCake").addEventListener("click",()=>{
-  burstHearts(18);
-  show("gallery");
-});
-
-$("nextToCakeFromGallery").addEventListener("click",()=>{
-  burstHearts(20);
-  confetti(45);
+  burstHearts(16);
   show("cake");
 });
 
@@ -182,41 +176,6 @@ function petals(){
   }
 }
 
-
-// Photo gallery + cinematic lightbox
-document.querySelectorAll(".photo-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    card.style.transform = `perspective(900px) rotateY(${x * 9}deg) rotateX(${y * -9}deg) translateY(-6px)`;
-  });
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "";
-  });
-  card.addEventListener("click", () => {
-    const box = $("photoLightbox");
-    $("lightboxImage").src = card.dataset.photo;
-    $("lightboxCaption").textContent = card.querySelector(".photo-caption").textContent;
-    box.classList.add("show");
-    box.setAttribute("aria-hidden", "false");
-    burstHearts(8);
-  });
-});
-
-function closePhotoLightbox(){
-  const box = $("photoLightbox");
-  box.classList.remove("show");
-  box.setAttribute("aria-hidden", "true");
-}
-$("closeLightbox").addEventListener("click", closePhotoLightbox);
-$("photoLightbox").addEventListener("click", e => {
-  if(e.target === $("photoLightbox")) closePhotoLightbox();
-});
-document.addEventListener("keydown", e => {
-  if(e.key === "Escape") closePhotoLightbox();
-});
-
 $("replay").addEventListener("click",()=>{
   popped=0;
   $("popCount").textContent="0";
@@ -230,7 +189,6 @@ $("replay").addEventListener("click",()=>{
   $("wishBtn").textContent="Blow the Candle ✨";
   $("wishBtn").disabled=false;
   $("gift").classList.remove("opening");
-  closePhotoLightbox();
   show("intro");
 });
 

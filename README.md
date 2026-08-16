@@ -21,14 +21,3 @@ Open `index.html` in a browser.
 ## GitHub Pages
 Push all files and the `assets` folder to your GitHub repository, then enable GitHub Pages from:
 Settings → Pages → Deploy from branch → `main` → `/ (root)`.
-
-
-## Added in V2: Photo Memories
-
-The four new photos are in `assets/`:
-- `pavi-photo-1.png`
-- `pavi-photo-2.png`
-- `pavi-photo-3.png`
-- `pavi-photo-4.png`
-
-The new Photo Memories screen sits between the videos and birthday cake. Each photo has a 3D hover animation and opens in a fullscreen lightbox when tapped/clicked.

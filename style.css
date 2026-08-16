@@ -805,82 +805,478 @@ body::before{
 /* ================= PHOTO MEMORIES ================= */
 /* ================= MOBILE PHOTO VIEW ================= */
 
+
+/* =====================================================
+   📱 FULL MOBILE RESPONSIVE DESIGN
+   ===================================================== */
+
 @media (max-width: 720px) {
 
+  /* Main screen */
+  .screen {
+    padding: 12px;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  /* Moments main card */
   .moments-card {
     width: 96vw;
+    max-width: 420px;
     max-height: 94vh;
-    padding: 25px 14px;
+    padding: 22px 12px;
+    border-radius: 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
+
+  .moments-card h2 {
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: .9;
+    margin-bottom: 10px;
+  }
+
+  .moments-intro {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+    max-width: 320px;
+  }
+
+
+  /* =================================================
+     📸 PHOTO MEMORIES
+     ================================================= */
 
   .photo-memories {
     width: 100%;
-    margin: 28px auto 25px;
+    margin: 20px auto;
   }
 
   .photo-memories h3 {
-    font-size: 38px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    line-height: 1;
     margin-bottom: 18px;
+    color: #fff4f5;
   }
 
   .photo-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
     width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
   }
 
   .photo-memory {
+    position: relative;
     width: 100%;
+    max-width: 350px;
+    height: auto;
     aspect-ratio: 4 / 5;
     padding: 6px;
-    border-radius: 22px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+      0 15px 35px rgba(0,0,0,.30);
+
+    overflow: hidden;
   }
 
   .photo-memory img {
+    display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
-    border-radius: 16px;
-  }
 
-  .photo-memory:hover {
-    transform: translateY(-4px);
-  }
-}
-
-
-/* Extra small phones */
-
-@media (max-width: 400px) {
-
-  .moments-card {
-    width: 97vw;
-    padding: 22px 11px;
-  }
-
-  .photo-grid {
-    max-width: 350px;
-    gap: 16px;
-  }
-
-  .photo-memory {
-    aspect-ratio: 4 / 5;
-    border-radius: 19px;
-  }
-
-  .photo-memory img {
     border-radius: 14px;
   }
 
-  .photo-memories h3 {
-    font-size: 34px;
+  /* Photo number / label */
+  .photo-memory p {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    margin: 0;
+    padding: 8px 12px;
+
+    border-radius: 12px;
+
+    color: white;
+    background: rgba(50,5,20,.65);
+    backdrop-filter: blur(8px);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    text-align: center;
+  }
+
+
+  /* =================================================
+     🎥 VIDEO MEMORIES
+     ================================================= */
+
+  .video-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 380px;
+
+    gap: 20px;
+    margin: 20px auto;
+  }
+
+  .memory-card {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 6px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+      0 15px 35px rgba(0,0,0,.30);
+
+    overflow: hidden;
+  }
+
+  .memory-card video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    /*
+      9:16 = perfect mobile video ratio
+    */
+    aspect-ratio: 9 / 16;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    background: #17050c;
+  }
+
+  .memory-card p {
+    margin: 10px 6px 6px;
+
+    color: #f2dce3;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+
+    text-align: center;
+  }
+
+  .memory-number {
+    top: 14px;
+    left: 14px;
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 10px;
+  }
+
+
+  /* =================================================
+     🎁 INTRO SCREEN
+     ================================================= */
+
+  .intro-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: clamp(65px, 20vw, 100px);
+  }
+
+  .intro-sub {
+    max-width: 320px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .gift-wrap {
+    transform: scale(.85);
+    margin: 15px auto 5px;
+  }
+
+  .primary-btn,
+  .ghost-btn {
+    padding: 13px 22px;
+    font-size: 12px;
+  }
+
+
+  /* =================================================
+     💖 REVEAL SCREEN
+     ================================================= */
+
+  .reveal-card {
+    width: 94vw;
+    max-width: 400px;
+    max-height: 94vh;
+
+    padding: 24px 14px;
+    border-radius: 24px;
+  }
+
+  .reveal-card h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .photo-frame {
+    width: min(82vw, 300px);
+    height: min(105vw, 360px);
+
+    margin-bottom: 18px;
+  }
+
+  .message {
+    font-size: 25px;
+  }
+
+  .small-note {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+
+  /* =================================================
+     🎂 CAKE SCREEN
+     ================================================= */
+
+  .cake-card {
+    width: 94vw;
+    max-width: 400px;
+    max-height: 94vh;
+
+    padding: 22px 12px;
+    border-radius: 24px;
+  }
+
+  .cake-card h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .cake-area {
+    transform: scale(.82);
+    transform-origin: top center;
+
+    margin: 0 auto -35px;
+  }
+
+
+  /* =================================================
+     🎈 BALLOONS
+     ================================================= */
+
+  .balloon-card {
+    width: 94vw;
+    max-width: 400px;
+
+    padding: 25px 15px;
+    border-radius: 24px;
+  }
+
+  .balloon-card h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .moon {
+    width: 55px;
+    height: 55px;
+
+    top: 5%;
+    right: 8%;
+  }
+
+  .balloon {
+    width: 52px;
+    height: 70px;
+  }
+
+
+  /* =================================================
+     💌 LETTER
+     ================================================= */
+
+  .letter-card {
+    width: 94vw;
+    max-width: 420px;
+
+    padding: 20px 12px;
+  }
+
+  .envelope {
+    width: 90vw;
+    max-width: 350px;
+    height: 230px;
+
+    margin: 10px auto 20px;
+  }
+
+  .env-paper {
+    padding: 20px 15px;
+  }
+
+  .letter-title {
+    font-size: 21px;
+  }
+
+  #typedLetter {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+
+  /* =================================================
+     🎆 FINAL SCREEN
+     ================================================= */
+
+  .final-content {
+    width: 94vw;
+    padding: 15px;
+  }
+
+  .final-content h2 {
+    font-size: clamp(44px, 12vw, 62px);
+  }
+
+  .final-message {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .signature {
+    font-size: 21px;
   }
 }
 
+
+/* =====================================================
+   📱 VERY SMALL PHONES
+   320px – 400px
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .screen {
+    padding: 8px;
+  }
+
+  .moments-card {
+    width: 97vw;
+    padding: 20px 9px;
+    border-radius: 21px;
+  }
+
+  .moments-card h2 {
+    font-size: 42px;
+  }
+
+  /* Photos */
+  .photo-grid {
+    gap: 15px;
+  }
+
+  .photo-memory {
+    max-width: 330px;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+    padding: 5px;
+  }
+
+  .photo-memory img {
+    border-radius: 13px;
+  }
+
+  /* Videos */
+  .video-grid {
+    max-width: 330px;
+    gap: 16px;
+  }
+
+  .memory-card {
+    max-width: 330px;
+    border-radius: 18px;
+    padding: 5px;
+  }
+
+  .memory-card video {
+    aspect-ratio: 9 / 16;
+    border-radius: 13px;
+  }
+
+  .memory-card p {
+    font-size: 15px;
+  }
+
+  /* Reveal photo */
+  .photo-frame {
+    width: 78vw;
+    height: 100vw;
+    max-height: 330px;
+  }
+
+  /* Cake */
+  .cake-area {
+    transform: scale(.72);
+    margin-bottom: -60px;
+  }
+
+  /* Envelope */
+  .envelope {
+    width: 90vw;
+    height: 210px;
+  }
+}
+
+
+/* =====================================================
+   📱 EXTRA SMALL PHONES
+   320px
+   ===================================================== */
+
+@media (max-width: 340px) {
+
+  .moments-card {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .photo-memory,
+  .memory-card {
+    max-width: 300px;
+  }
+
+  .photo-memory {
+    aspect-ratio: 4 / 5;
+  }
+
+  .memory-card video {
+    aspect-ratio: 9 / 16;
+  }
+
+  .moments-card h2 {
+    font-size: 38px;
+  }
+}
   
 
 

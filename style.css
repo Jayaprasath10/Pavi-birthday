@@ -653,3 +653,80 @@ h1 {
     padding: 25px 16px;
   }
 }
+
+/* ================= V2 CINEMATIC EXPERIENCE ================= */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:30;
+  background:radial-gradient(circle at center,transparent 35%,rgba(0,0,0,.28));
+}
+.screen{will-change:transform,opacity}
+.screen.active .reveal-card,
+.screen.active .moments-card,
+.screen.active .cake-card,
+.screen.active .balloon-card,
+.screen.active .letter-card,
+.screen.active .final-content{animation:cardIn 1s cubic-bezier(.16,1,.3,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(35px) scale(.96)}to{opacity:1;transform:none}}
+
+.intro-screen:after,.reveal-screen:after,.moments-screen:after,.cake-screen:after,.balloons-screen:after,.letter-screen:after{
+  content:"";position:absolute;inset:-20%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,190,210,.12) 0 1px,transparent 2px);
+  background-size:46px 46px;animation:starDrift 22s linear infinite;opacity:.5
+}
+@keyframes starDrift{to{transform:translate(46px,46px)}}
+
+.gift-wrap{animation:giftFloat 3s ease-in-out infinite}
+@keyframes giftFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(1deg)}}
+.gift-wrap.opening{animation:giftOpen .8s cubic-bezier(.2,.9,.2,1) forwards}
+@keyframes giftOpen{0%{transform:scale(1)}35%{transform:scale(1.18) rotate(-4deg)}70%{transform:scale(.94) rotate(4deg)}100%{transform:scale(1.08);opacity:0;filter:blur(5px)}}
+
+.balloons-screen{background:radial-gradient(circle at 50% 18%,rgba(255,180,205,.2),transparent 25%),linear-gradient(180deg,#160817,#5c1232 60%,#190612)}
+.moon{position:absolute;top:8%;right:12%;width:90px;height:90px;border-radius:50%;background:#fff4e6;box-shadow:0 0 50px rgba(255,230,210,.35);opacity:.9}
+.balloon-card{position:relative;z-index:4;width:min(90vw,520px);text-align:center;padding:32px 24px;border:1px solid rgba(255,255,255,.15);border-radius:30px;background:rgba(20,3,13,.45);backdrop-filter:blur(15px);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.balloon-card h2{font-size:clamp(44px,8vw,68px);line-height:.88;margin:6px 0 12px}
+.balloon-card h2 span{color:#ffb1c7;font-style:italic}
+.pop-counter{display:inline-block;margin:0 auto 20px;padding:7px 14px;border:1px solid rgba(255,255,255,.16);border-radius:99px;color:#f5d9e1;font-size:11px}
+.balloon-bg{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+.balloon{position:absolute;bottom:-160px;width:68px;height:88px;border-radius:50% 50% 46% 46%;cursor:pointer;pointer-events:auto;filter:drop-shadow(0 14px 12px rgba(0,0,0,.2));animation:balloonRise linear forwards}
+.balloon:before{content:"";position:absolute;left:50%;bottom:-12px;width:2px;height:42px;background:rgba(255,255,255,.4)}
+.balloon:after{content:"";position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);border:6px solid transparent;border-top-color:currentColor}
+.balloon.pop{animation:balloonPop .42s ease forwards!important}
+@keyframes balloonRise{to{transform:translateY(-125vh) rotate(18deg)}}
+@keyframes balloonPop{0%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.8}100%{transform:scale(0);opacity:0}}
+
+.moments-card{transform-style:preserve-3d}
+.memory-card{transform-style:preserve-3d;will-change:transform}
+.memory-card video{transition:transform .5s ease,filter .5s ease}
+.memory-card:hover video{transform:scale(1.035);filter:saturate(1.15)}
+.memory-card:after{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.16),transparent 58%);transform:translateX(-60%);transition:.7s;pointer-events:none}
+.memory-card:hover:after{transform:translateX(60%)}
+
+.cake-area{filter:drop-shadow(0 0 25px rgba(255,120,160,.12))}
+.cake-area.wish-made{animation:cakeCelebrate .8s ease}
+@keyframes cakeCelebrate{25%{transform:scale(1.08) rotate(-2deg)}50%{transform:scale(.96) rotate(2deg)}100%{transform:scale(1)}}
+
+.letter-screen{background:radial-gradient(circle at 50% 25%,rgba(255,178,202,.18),transparent 30%),linear-gradient(145deg,#210812,#681b38 55%,#17040d)}
+.letter-card{position:relative;z-index:4;width:min(92vw,620px);text-align:center;padding:30px 22px}
+.envelope{position:relative;width:min(86vw,470px);height:310px;margin:10px auto 22px;perspective:1200px;cursor:pointer}
+.env-back,.env-front{position:absolute;inset:0;border-radius:12px;background:linear-gradient(145deg,#e7a4b5,#9c3457);box-shadow:0 25px 60px rgba(0,0,0,.35)}
+.env-back{z-index:1}
+.env-front{z-index:4;clip-path:polygon(0 35%,50% 68%,100% 35%,100% 100%,0 100%);background:linear-gradient(160deg,#d97f9b,#8f284a)}
+.env-flap{position:absolute;z-index:5;left:0;top:0;width:100%;height:64%;background:#c9607f;clip-path:polygon(0 0,100% 0,50% 82%);transform-origin:top;transition:transform .8s cubic-bezier(.2,.8,.2,1);filter:brightness(1.05)}
+.env-paper{position:absolute;z-index:3;left:8%;bottom:5%;width:84%;height:88%;padding:30px 24px 20px;background:#fff8ed;color:#5b2538;border-radius:7px;box-shadow:0 10px 25px rgba(0,0,0,.18);transform:translateY(0);transition:transform 1s cubic-bezier(.2,.9,.2,1);text-align:left}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.envelope.open .env-paper{transform:translateY(-95px)}
+.wax{position:absolute;z-index:6;left:50%;top:54%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#8d1d3e;color:#ffdce7;display:grid;place-items:center;box-shadow:0 5px 12px rgba(0,0,0,.25);transition:opacity .3s}
+.envelope.open .wax{opacity:0}
+.letter-title{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:700;margin-bottom:12px}
+#typedLetter{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.45;min-height:105px}
+.letter-sign{font-family:"Cormorant Garamond",serif;font-size:19px;text-align:right;margin-top:12px;color:#9a3857}
+.hidden-btn{display:none!important}
+.hidden-btn.show{display:inline-block!important}
+.petal{position:absolute;top:-30px;width:12px;height:18px;border-radius:100% 0 100% 0;background:#ff9db7;opacity:.7;animation:petalFall linear forwards}
+@keyframes petalFall{to{transform:translate(80px,110vh) rotate(500deg);opacity:0}}
+
+.final-screen .final-heart{font-size:54px;animation:heartbeat .95s infinite}
+.final-content h2{animation:finalGlow 2.4s ease-in-out infinite}
+@keyframes finalGlow{0%,100%{text-shadow:0 0 10px rgba(255,170,195,.1)}50%{text-shadow:0 0 38px rgba(255,170,195,.4)}}
+.confetti-piece{position:fixed;top:-20px;width:8px;height:15px;z-index:50;pointer-events:none;animation:confettiFall linear forwards}
+@keyframes confettiFall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}

@@ -729,4 +729,25 @@ body::before{
 .final-content h2{animation:finalGlow 2.4s ease-in-out infinite}
 @keyframes finalGlow{0%,100%{text-shadow:0 0 10px rgba(255,170,195,.1)}50%{text-shadow:0 0 38px rgba(255,170,195,.4)}}
 .confetti-piece{position:fixed;top:-20px;width:8px;height:15px;z-index:50;pointer-events:none;animation:confettiFall linear forwards}
-@keyframes confettiFall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}
+@keyframes confettiFall{
+  to{
+    transform:translate3d(var(--x),110vh,0) rotate(720deg);
+    opacity:0;
+  }
+}
+
+
+/* ================= PHOTO MEMORIES ================= */
+
+.photo-memories {
+  margin: 30px auto 25px;
+  padding-top: 8px;
+}
+
+.photo-memories h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 5vw, 42px);
+  margin: -2px 0 18px;
+  color: #fff5f3;
+}
+

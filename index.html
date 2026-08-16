@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8b1638" />
+  <title>Happy Birthday Pavi ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hearts"></div>
+  <div id="sparkles"></div>
+
+  <main>
+    <!-- Intro -->
+    <section class="screen intro-screen active" id="intro">
+      <div class="glow-orb"></div>
+      <div class="intro-content">
+        <div class="mini-heart">♥</div>
+        <p class="eyebrow">A little surprise for</p>
+        <h1>Pavi</h1>
+        <p class="intro-sub">Someone very special deserves a very special moment.</p>
+
+        <div class="gift-wrap" id="gift">
+          <div class="gift-glow"></div>
+          <div class="gift">
+            <div class="gift-lid"></div>
+            <div class="gift-box"></div>
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+            <div class="bow bow-left"></div>
+            <div class="bow bow-right"></div>
+          </div>
+        </div>
+
+        <button class="primary-btn" id="openGift">Open Your Surprise <span>♥</span></button>
+        <p class="tap-hint">tap the gift or button</p>
+      </div>
+    </section>
+
+    <!-- Reveal -->
+    <section class="screen reveal-screen" id="reveal">
+      <div class="floating-rose rose-1">🌹</div>
+      <div class="floating-rose rose-2">🌹</div>
+      <div class="reveal-card">
+        <p class="eyebrow">18 August • Your day</p>
+        <h2>Happy Birthday,<br><span>Pavi</span> ❤️</h2>
+        <div class="photo-frame">
+          <div class="photo-shine"></div>
+          <img src="assets/pavi.png" alt="Pavi" />
+        </div>
+        <p class="message">Happy birthday my favorite human</p>
+        <p class="small-note">May your smile stay this beautiful, today and always.</p>
+        <button class="primary-btn" id="nextToMoments">See Our Moments ✨</button>
+      </div>
+    </section>
+
+    <!-- Favorite Moments -->
+    <section class="screen moments-screen" id="moments">
+      <div class="moments-card">
+        <p class="eyebrow">Little memories, big feelings</p>
+        <h2>Our Favorite<br><span>Moments</span> ❤️</h2>
+        <p class="moments-intro">Some moments are too beautiful to forget…</p>
+
+        <div class="video-grid">
+          <article class="memory-card">
+            <div class="memory-number">01</div>
+            <video controls playsinline preload="metadata">
+              <source src="assets/moment-1.mp4" type="video/mp4">
+            </video>
+            <p>A moment worth keeping forever.</p>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-number">02</div>
+            <video controls playsinline preload="metadata">
+              <source src="assets/moment-2.mp4" type="video/mp4">
+            </video>
+            <p>Another little memory with a big smile.</p>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-number">03</div>
+            <video controls playsinline preload="metadata">
+              <source src="assets/moment-3.mp4" type="video/mp4">
+            </video>
+            <p>One more memory to treasure.</p>
+          </article>
+        </div>
+
+        <button class="primary-btn" id="nextToCake">Now Make a Wish ✨</button>
+      </div>
+    </section>
+
+    <!-- Cake -->
+    <section class="screen cake-screen" id="cake">
+      <div class="cake-card">
+        <p class="eyebrow">Make a wish</p>
+        <h2>One candle.<br><span>One beautiful wish.</span></h2>
+
+        <div class="cake-area">
+          <div class="flame" id="flame"></div>
+          <div class="candle">
+            <div class="wick"></div>
+            <div class="candle-stripe"></div>
+          </div>
+          <div class="cake-top">
+            <div class="cream cream-1"></div>
+            <div class="cream cream-2"></div>
+            <div class="cherry">♥</div>
+          </div>
+          <div class="cake-body">
+            <div class="cake-drip d1"></div>
+            <div class="cake-drip d2"></div>
+            <div class="cake-drip d3"></div>
+            <div class="cake-drip d4"></div>
+          </div>
+          <div class="plate"></div>
+        </div>
+
+        <p class="wish-text" id="wishText">Close your eyes and make a wish…</p>
+        <button class="primary-btn" id="wishBtn">Blow the Candle ✨</button>
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section class="screen final-screen" id="final">
+      <canvas id="fireworks"></canvas>
+      <div class="final-content">
+        <div class="final-heart">♥</div>
+        <p class="eyebrow">For my favorite human</p>
+        <h2>Pavi, you make<br>the world a little brighter.</h2>
+        <p class="final-message">
+          I hope this new year of your life brings you countless reasons
+          to smile, dreams that come true, and moments you'll always want to remember.
+        </p>
+        <div class="signature">With lots of love <span>♥</span></div>
+        <button class="ghost-btn" id="replay">Replay the Surprise ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

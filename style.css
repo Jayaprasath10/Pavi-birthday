@@ -739,15 +739,19 @@ body::before{
 
 /* ================= PHOTO MEMORIES ================= */
 
-.photo-memories {
-  margin: 30px auto 25px;
-  padding-top: 8px;
-}
+@media (max-width: 720px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
 
-.photo-memories h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(30px, 5vw, 42px);
-  margin: -2px 0 18px;
-  color: #fff5f3;
+  .photo-memory {
+    border-radius: 15px;
+    padding: 5px;
+  }
+
+  .photo-memory img {
+    border-radius: 11px;
+  }
 }
 

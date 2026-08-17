@@ -1115,34 +1115,164 @@ body::before{
   /* =================================================
      💌 LETTER
      ================================================= */
+/* =================================================
+   💌 LETTER - MOBILE FIX
+   ================================================= */
+
+@media (max-width: 720px) {
+
+  .letter-screen {
+    padding: 12px 8px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
 
   .letter-card {
-    width: 94vw;
+    width: 96vw;
     max-width: 420px;
-
-    padding: 20px 12px;
+    min-height: auto;
+    padding: 18px 8px 25px;
+    margin: auto;
+    text-align: center;
   }
 
+  /* Envelope fits the phone width */
   .envelope {
-    width: 90vw;
-    max-width: 350px;
-    height: 230px;
-
-    margin: 10px auto 20px;
+    width: 92vw;
+    max-width: 360px;
+    height: 245px;
+    margin: 12px auto 22px;
   }
 
+  /* Letter paper */
   .env-paper {
-    padding: 20px 15px;
+    left: 7%;
+    width: 86%;
+    height: 90%;
+    padding: 20px 15px 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .letter-title {
     font-size: 21px;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
 
   #typedLetter {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.5;
+    min-height: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
+
+  .letter-sign {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-top: 14px;
+  }
+
+  .wax {
+    width: 42px;
+    height: 42px;
+  }
+
+  .letter-card .primary-btn {
+    max-width: 90%;
+    padding: 12px 18px;
+    font-size: 12px;
+  }
+}
+
+
+/* =================================================
+   💌 SMALL PHONE LETTER FIX
+   ================================================= */
+
+@media (max-width: 400px) {
+
+  .letter-screen {
+    padding: 8px 5px;
+  }
+
+  .letter-card {
+    width: 97vw;
+    padding: 15px 5px 22px;
+  }
+
+  .envelope {
+    width: 94vw;
+    max-width: 350px;
+    height: 235px;
+    margin-bottom: 20px;
+  }
+
+  .env-paper {
+    left: 6%;
+    width: 88%;
+    height: 91%;
+    padding: 17px 12px 15px;
+  }
+
+  .letter-title {
+    font-size: 19px;
+  }
+
+  #typedLetter {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .letter-sign {
+    font-size: 16px;
+  }
+
+  .wax {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
+
+
+/* =================================================
+   💌 EXTRA SMALL PHONE
+   ================================================= */
+
+@media (max-width: 340px) {
+
+  .letter-card {
+    width: 98vw;
+  }
+
+  .envelope {
+    width: 95vw;
+    height: 225px;
+  }
+
+  .env-paper {
+    padding: 15px 10px;
+  }
+
+  .letter-title {
+    font-size: 18px;
+  }
+
+  #typedLetter {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .letter-sign {
+    font-size: 15px;
+  }
+}
+  
+
+ 
 
 
   /* =================================================

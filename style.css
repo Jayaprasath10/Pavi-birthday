@@ -1277,4 +1277,126 @@ body::before{
     font-size: 38px;
   }
 }
+/* =========================================
+   📱 FINAL MOBILE FIX
+   ========================================= */
+
+@media (max-width: 720px) {
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  .screen {
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Make every main card fit phone screen */
+  .reveal-card,
+  .cake-card,
+  .moments-card,
+  .balloon-card,
+  .letter-card {
+    width: 94vw;
+    max-width: 420px;
+    max-height: 92vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Letter page */
+  .letter-card {
+    padding: 18px 10px;
+  }
+
+  .envelope {
+    width: 88vw;
+    max-width: 350px;
+    height: 220px;
+  }
+
+  .env-paper {
+    width: 84%;
+    height: auto;
+    min-height: 88%;
+    padding: 18px 14px;
+    overflow-y: auto;
+  }
+
+  .letter-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  #typedLetter {
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .letter-sign {
+    font-size: 18px;
+  }
+
+  /* Buttons fit small screens */
+  .primary-btn,
+  .ghost-btn {
+    max-width: 90vw;
+    white-space: normal;
+  }
+
+  /* Prevent large headings from overflowing */
+  h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Images and videos stay inside screen */
+  img,
+  video {
+    max-width: 100%;
+  }
+}
+
+/* 📱 Very small phones */
+@media (max-width: 400px) {
+
+  .screen {
+    padding: 7px;
+  }
+
+  .letter-card {
+    width: 96vw;
+    padding: 15px 8px;
+  }
+
+  .envelope {
+    width: 92vw;
+    height: 205px;
+  }
+
+  .env-paper {
+    padding: 15px 11px;
+  }
+
+  .letter-title {
+    font-size: 18px;
+  }
+
+  #typedLetter {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .letter-sign {
+    font-size: 16px;
+  }
+}
   

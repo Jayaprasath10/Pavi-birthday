@@ -779,7 +779,7 @@ body::before{
 .env-flap{position:absolute;z-index:5;left:0;top:0;width:100%;height:64%;background:#c9607f;clip-path:polygon(0 0,100% 0,50% 82%);transform-origin:top;transition:transform .8s cubic-bezier(.2,.8,.2,1);filter:brightness(1.05)}
 .env-paper{position:absolute;z-index:3;left:8%;bottom:5%;width:84%;height:88%;padding:30px 24px 20px;background:#fff8ed;color:#5b2538;border-radius:7px;box-shadow:0 10px 25px rgba(0,0,0,.18);transform:translateY(0);transition:transform 1s cubic-bezier(.2,.9,.2,1);text-align:left}
 .envelope.open .env-flap{transform:rotateX(180deg)}
-.envelope.open .env-paper{transform:translateY(-95px)}
+.envelope.open .env-paper{transform:translateY(-70px)}
 .wax{position:absolute;z-index:6;left:50%;top:54%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#8d1d3e;color:#ffdce7;display:grid;place-items:center;box-shadow:0 5px 12px rgba(0,0,0,.25);transition:opacity .3s}
 .envelope.open .wax{opacity:0}
 .letter-title{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:700;margin-bottom:12px}

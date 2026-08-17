@@ -1529,4 +1529,421 @@ body::before{
     font-size: 16px;
   }
 }
+/* =========================================================
+   💌 FINAL MOBILE LETTER FIX
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+  /* Letter screen */
+  .letter-screen {
+    position: fixed !important;
+    inset: 0 !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    padding: 15px 8px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+
+  /* Letter main card */
+  .letter-card {
+    position: relative !important;
+
+    width: 96vw !important;
+    max-width: 420px !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    padding: 18px 8px 35px !important;
+
+    margin: 0 auto !important;
+
+    overflow: visible !important;
+
+    text-align: center !important;
+  }
+
+
+  /* =====================================================
+     ENVELOPE CLOSED
+     ===================================================== */
+
+  .envelope {
+    position: relative !important;
+
+    width: 92vw !important;
+    max-width: 360px !important;
+
+    height: 220px !important;
+
+    margin: 15px auto 25px !important;
+
+    perspective: 1200px !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     LETTER PAPER
+     ===================================================== */
+
+  .env-paper {
+    position: absolute !important;
+
+    left: 5% !important;
+    bottom: 5% !important;
+
+    width: 90% !important;
+
+    height: 195px !important;
+
+    padding: 18px 14px !important;
+
+    box-sizing: border-box !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch !important;
+
+    text-align: left !important;
+
+    z-index: 3 !important;
+  }
+
+
+  .letter-title {
+    font-size: 20px !important;
+
+    line-height: 1.2 !important;
+
+    margin-bottom: 10px !important;
+  }
+
+
+  #typedLetter {
+    font-size: 15px !important;
+
+    line-height: 1.5 !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    overflow-wrap: break-word !important;
+
+    word-wrap: break-word !important;
+  }
+
+
+  .letter-sign {
+    font-size: 16px !important;
+
+    line-height: 1.4 !important;
+
+    margin-top: 15px !important;
+
+    padding-bottom: 8px !important;
+  }
+
+
+  /* =====================================================
+     💌 WHEN LETTER IS OPEN
+     
+     IMPORTANT:
+     Instead of moving the paper outside the envelope,
+     we turn the envelope into a proper reading card.
+     ===================================================== */
+
+  .envelope.open {
+    width: 92vw !important;
+    max-width: 360px !important;
+
+    height: auto !important;
+
+    min-height: 420px !important;
+
+    margin-bottom: 25px !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* Hide envelope front/flap after opening
+     so they cannot cover the letter text */
+
+  .envelope.open .env-front {
+    display: none !important;
+  }
+
+  .envelope.open .env-flap {
+    display: none !important;
+  }
+
+
+  /* Back becomes the background */
+
+  .envelope.open .env-back {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    min-height: 420px !important;
+
+    border-radius: 15px !important;
+
+    z-index: 1 !important;
+  }
+
+
+  /* OPEN LETTER PAPER */
+
+  .envelope.open .env-paper {
+    position: relative !important;
+
+    left: 0 !important;
+    bottom: auto !important;
+
+    width: 94% !important;
+
+    height: auto !important;
+
+    min-height: 390px !important;
+
+    max-height: 62vh !important;
+
+    margin: 15px auto !important;
+
+    padding: 22px 18px !important;
+
+    transform: none !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    z-index: 10 !important;
+
+    border-radius: 10px !important;
+
+    box-sizing: border-box !important;
+
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+
+  .envelope.open .letter-title {
+    font-size: 22px !important;
+
+    margin-bottom: 14px !important;
+  }
+
+
+  .envelope.open #typedLetter {
+    font-size: 16px !important;
+
+    line-height: 1.6 !important;
+
+    min-height: 0 !important;
+
+    overflow-wrap: break-word !important;
+  }
+
+
+  .envelope.open .letter-sign {
+    font-size: 18px !important;
+
+    margin-top: 18px !important;
+
+    padding-bottom: 12px !important;
+  }
+
+
+  /* Wax disappears after opening */
+
+  .envelope.open .wax {
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+  }
+
+
+  /* Buttons */
+
+  .letter-card .primary-btn {
+    max-width: 92vw !important;
+
+    white-space: normal !important;
+
+    font-size: 12px !important;
+
+    padding: 12px 18px !important;
+  }
+}
+
+
+/* =========================================================
+   📱 SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .letter-screen {
+    padding: 10px 5px !important;
+  }
+
+
+  .letter-card {
+    width: 97vw !important;
+
+    padding: 15px 5px 30px !important;
+  }
+
+
+  .envelope {
+    width: 94vw !important;
+
+    height: 205px !important;
+  }
+
+
+  .env-paper {
+    width: 90% !important;
+
+    height: 180px !important;
+
+    padding: 15px 11px !important;
+  }
+
+
+  .letter-title {
+    font-size: 18px !important;
+  }
+
+
+  #typedLetter {
+    font-size: 14px !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  .letter-sign {
+    font-size: 15px !important;
+  }
+
+
+  /* OPEN */
+
+  .envelope.open {
+    width: 94vw !important;
+
+    min-height: 390px !important;
+  }
+
+
+  .envelope.open .env-back {
+    min-height: 390px !important;
+  }
+
+
+  .envelope.open .env-paper {
+    width: 94% !important;
+
+    min-height: 360px !important;
+
+    max-height: 60vh !important;
+
+    padding: 19px 14px !important;
+  }
+
+
+  .envelope.open #typedLetter {
+    font-size: 14px !important;
+
+    line-height: 1.55 !important;
+  }
+
+
+  .envelope.open .letter-title {
+    font-size: 20px !important;
+  }
+}
+
+
+/* =========================================================
+   📱 VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 340px) {
+
+  .letter-card {
+    width: 98vw !important;
+  }
+
+
+  .envelope {
+    width: 95vw !important;
+
+    height: 195px !important;
+  }
+
+
+  .env-paper {
+    width: 92% !important;
+
+    height: 170px !important;
+
+    padding: 13px 9px !important;
+  }
+
+
+  .letter-title {
+    font-size: 17px !important;
+  }
+
+
+  #typedLetter {
+    font-size: 13px !important;
+
+    line-height: 1.45 !important;
+  }
+
+
+  .envelope.open {
+    width: 95vw !important;
+
+    min-height: 370px !important;
+  }
+
+
+  .envelope.open .env-back {
+    min-height: 370px !important;
+  }
+
+
+  .envelope.open .env-paper {
+    width: 94% !important;
+
+    min-height: 340px !important;
+
+    max-height: 58vh !important;
+
+    padding: 17px 11px !important;
+  }
+
+
+  .envelope.open #typedLetter {
+    font-size: 13px !important;
+
+    line-height: 1.5 !important;
+  }
+}
   
